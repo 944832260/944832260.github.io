@@ -5,13 +5,17 @@
   
   <title>皇天天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="正则表达式标签： 正则  什么是正则   专门用来操作（检：检验，索:搜索）字符串的一种工具||一种规则。    正则的特性: - 懒惰:      让它找一次，它绝对不可能找多次 - 贪婪:      它会尽可能的找到你规则中数据">
+<meta property="og:type" content="article">
 <meta property="og:title" content="皇天天">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/05/18/正则表达式/index.html">
 <meta property="og:site_name" content="皇天天">
+<meta property="og:description" content="正则表达式标签： 正则  什么是正则   专门用来操作（检：检验，索:搜索）字符串的一种工具||一种规则。    正则的特性: - 懒惰:      让它找一次，它绝对不可能找多次 - 贪婪:      它会尽可能的找到你规则中数据">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-18T10:22:53.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="皇天天">
+<meta name="twitter:description" content="正则表达式标签： 正则  什么是正则   专门用来操作（检：检验，索:搜索）字符串的一种工具||一种规则。    正则的特性: - 懒惰:      让它找一次，它绝对不可能找多次 - 贪婪:      它会尽可能的找到你规则中数据">
   
     <link rel="alternate" href="/atom.xml" title="皇天天" type="application/atom+xml">
   
@@ -64,9 +68,7 @@
   </div>
 </div>
 
-        <section id="main">
-  
-    <article id="post-正则表达式" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-正则表达式" class="wow slideInRight article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/05/18/正则表达式/" class="article-date">
   <time class="post-time" datetime="2018-05-18T10:22:53.883Z" itemprop="datePublished">
@@ -89,11 +91,97 @@
 - 贪婪:
      它会尽可能的找到你规则中数据
 </code></pre><hr>
-        
-          <p class="article-more-link">
-            <a href="/2018/05/18/正则表达式/#more">Read More</a>
-          </p>
-        
+<a id="more"></a>
+<p>##正则的方法</p>
+<pre><code>//.test(string);  返回值为布尔值
+如果string中有正则匹配项就返回true，否则false
+
+string.search(//||字符串);
+找到指定字符的位置
+没有找到 -1
+
+string.match(//);
+找到匹配项，返回的是一个数组
+没有找到返回null
+
+string.replace(要替换的|//,替换成什么|callback)    新的字符串
+第一个参数:
+    每次匹配到的数据
+
+    第二个参数:
+        每次找到数据的下标
+
+    第三个参数:
+        整个字符串
+
+    第四个参数（包括之后）:
+        undefined 
+子项:
+    ()
+
+    1.在正则中加括号,如果使用repalce，那么从第一参数之后就是子项
+
+        有几个子项，就会对应回调函数的参数
+
+        当子项用完，又是index，all，undefined
+
+    2.提权
+        (1+2)*3    
+</code></pre><hr>
+<h2 id="元字符-和-量词"><a href="#元字符-和-量词" class="headerlink" title="元字符 和 量词"></a>元字符 和 量词</h2><pre><code>g---&gt;全局
+i---&gt;不分大小写
+
+\d  一个数字
+\D  一个非数字
+
+\w  一个字母数字下划线
+\W  一个非字母数字下划线
+
+\s 一个空格
+\S 一个非空格
+
+\b  边界符  
+\B  非边界符
+
++  最小一个，最多无限
+| 代表 或者
+\转义符
+\+一些字母，有可能会为一个特殊的符号
+
+[] 在中括号中取其一
+
+    小写字母：
+        a-z
+    数字:
+        0-9
+    大写字母：
+        A-Z
+    中文2个字节--&gt; [\u4e00-\u9fa5]
+
+{a,b}
+    a最小
+    b最大
+
+    {0,5}  最小没有最多5个
+
+    +  {1,} 最小一个最多不限
+
+    ?  {0,1} 最小可以没有，最多只能有一个
+
+    *  {0,} 最小没有最多不限
+</code></pre><hr>
+<p>正则表达式为一个对象<br>/字符串/  简写  里面只能为字符串</p>
+<pre><code>new Regexp(正则||字符串) 标准写法
+
+\转义符
+
+\+一些字母，有可能会为一个特殊的符号
+
+区别:
+    let c = 2;
+    /c/   &apos;c&apos;  简写中的c认为是字符串（放不了变量）
+    new Regexp(c+&apos;d&apos;)  c -&gt; 2  这个中的c为变量，代表是2
+</code></pre>
       
     </div>
     <footer class="article-footer">
@@ -103,12 +191,11 @@
     </footer>
   </div>
   
+    
+  
 </article>
 
 
-
-
-  
 
 </section>
         
