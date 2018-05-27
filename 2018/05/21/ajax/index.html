@@ -5,17 +5,17 @@
   
   <title>皇天天</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ajax标签： ajax">
+  <meta name="description" content="ajax标签（空格分隔）： ajax">
 <meta property="og:type" content="article">
 <meta property="og:title" content="皇天天">
 <meta property="og:url" content="http://yoursite.com/2018/05/21/ajax/index.html">
 <meta property="og:site_name" content="皇天天">
-<meta property="og:description" content="ajax标签： ajax">
+<meta property="og:description" content="ajax标签（空格分隔）： ajax">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-21T10:20:06.843Z">
+<meta property="og:updated_time" content="2018-05-27T14:10:50.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="皇天天">
-<meta name="twitter:description" content="ajax标签： ajax">
+<meta name="twitter:description" content="ajax标签（空格分隔）： ajax">
   
     <link rel="alternate" href="/atom.xml" title="皇天天" type="application/atom+xml">
   
@@ -83,7 +83,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h1><p>标签： ajax</p>
+        <h1 id="ajax"><a href="#ajax" class="headerlink" title="ajax"></a>ajax</h1><p>标签（空格分隔）： ajax</p>
 <a id="more"></a>
 <hr>
 <p>AJAX<br>            异步的js和xml</p>
@@ -103,7 +103,7 @@
 
     1.new XMLHttpRequest
 
-    2.ajax.open(methods,url,true/false)
+    2.ajax.open(methods,url+字段+内容,true/false)
 
     3.ajax.send()   
 
@@ -112,8 +112,10 @@
     5.ajax.responseText
 
 请求头:
+    字符串：
     ajax.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded&apos;)
-
+    JSON:
+    ajax.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded&apos;)
 
 
 get:
@@ -144,11 +146,23 @@ onreadystatechange
         500 502
 
         ajax.status;
+
+
+    post方式请求数据：
+        1.new XMLHttpRequest
+
+        2.ajax.open(&apos;post&apos;,url)
+
+        3.ajax.send(字段+内容)   
+
+        4.ajax.onload = function(){
+            console.log(ajax.responseText)
+        } 
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/21/ajax/" data-id="cjhg3uxcp00002co08vbrqflb" class="article-share-link">分享</a>
+      <a data-url="http://yoursite.com/2018/05/21/ajax/" data-id="cjhowrcuo0000b4o0c3x9brxg" class="article-share-link">分享</a>
       
       
     </footer>
